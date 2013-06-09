@@ -357,14 +357,14 @@ class TestViews(ESTestCase):
             data.update(dict(full_name='foo', country='pl', photo=f), follow=True)
             response = client.post(reverse('profile.edit'), data, follow=True)
             doc = pq(response.content)
-            old_photo = doc('#profile-photo').attr('src')
+            old_photo = doc('.profile-photo').attr('src')
 
         with open(filename, 'rb') as f:
             data = self.data_privacy_fields.copy()
             data.update(dict(full_name='foo', country='pl', photo=f), follow=True)
             response = client.post(reverse('profile.edit'), data, follow=True)
             doc = pq(response.content)
-            new_photo = doc('#profile-photo').attr('src')
+            new_photo = doc('.profile-photo').attr('src')
         assert new_photo != old_photo
 
 
