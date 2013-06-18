@@ -76,10 +76,12 @@
         <img src="{{ profile.get_photo_url('70x70') }}" alt="{{ _('Profile photo') }}">
       </div>
       <input class="input-file" id="id_photo" type="file" name="photo">
-      <div id="id_photo_delete">
-        <input type="checkbox" name="photo-clear">
-        <label>{{ _('Remove Profile Photo') }}</label>
-      </div>
+      {% if profile.photo %}
+        <div id="id_photo_delete">
+          <input type="checkbox" name="photo-clear">
+          <label>{{ _('Remove Profile Photo') }}</label>
+        </div>
+      {% endif %}
     </fieldset>
     
     <fieldset>
