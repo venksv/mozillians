@@ -86,15 +86,10 @@
     </fieldset>
 
     <fieldset>
-      <div class="privacy-controls">
-        <label>Visible to:</label>
-        <select class="privacy-choice" name="privacy_email" id="id_privacy_email">
-          <option value="mozillians">{{ _('Mozillians') }}</option>
-          <option value="public">{{ _('Public') }}</option>
-        </select>
-      </div>
+      {{ privacy_field(profile_form.privacy_email, profile.privacy_email) }}
       <label>{{ _('Email') }}</label>
-      <input type="text" disabled="disabled" maxlength="30" value="{{ profile.user.email }}" name="email" id="id_email">
+      <input type="text" disabled="disabled" maxlength="30" 
+             value="{{ profile.user.email }}" name="email" id="id_email">
     </fieldset>
 
     <fieldset>
