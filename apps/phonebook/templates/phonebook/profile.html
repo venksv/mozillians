@@ -180,9 +180,7 @@
           {% if profile.email %}
             <li class="u-email email">
               <i class="icon-envelope"></i> 
-              <a href="mailto:{{ profile.email }}">
-                {{ profile.email }}
-              </a>
+              {{ profile.email }}
             </li>
           {% endif %}
           {% if profile.ircname %}
