@@ -734,8 +734,9 @@ class ExternalAccount(models.Model):
                         'validator': validate_username_not_url},
         TYPE_MOWIKI: {'name': 'Mozilla Wiki', 'url': 'https://wiki.mozilla.org/User:{identifier}',
                       'validator': validate_username_not_url},
-        TYPE_REMO: {'name': 'Mozilla Reps', 'url': 'https://reps.mozilla.org/u/{identifier}',
-                      'validator': validate_username_not_url}
+        TYPE_REMO: {'name': 'Mozilla Reps',
+                    'url': 'https://reps.mozilla.org/u/{identifier}/',
+                    'validator': validate_username_not_url}
     }
 
     user = models.ForeignKey(UserProfile)
